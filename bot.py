@@ -55,37 +55,35 @@ async def op(_, m :Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/SDBOTs_inifinity"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/SDBOTz")
-                    ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
+                        InlineKeyboardButton("🗯 Nhóm 18+", url="https://t.me/noiquy"),
+                        InlineKeyboardButton("💬 Kênh 18+", url="https://t.me/nhatky18")
                     ]
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @SdBotz__**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+            await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hi {}!\nQQLIVE PRO BẢN NÂNG CẤP CỦA CHICHLIVE MỚI RA MẮT 😍.\n➡️ Link tải - {} \n\n__@noiquy__**".format(m.from_user.mention, "https://taiqqlive.xyz"), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/SDAutoApproveBot?start=start")
+                        InlineKeyboardButton("💁‍♂️ Vào nhóm 18+ 💁‍♂️", url="https://t.me/noiquy")
                     ]
                 ]
             )
             add_group(m.chat.id)
-            await m.reply_text("**🦊 Hello {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
+            await m.reply_text("**🦊 Hello {}!\n Vào nhóm kín 18+ tại @noiquy**".format(m.from_user.first_name), reply_markup=keyboar)
         print(m.from_user.first_name +" Is started Your Bot!")
 
     except UserNotParticipant:
         key = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🍀 Check Again 🍀", "chk")
+                    InlineKeyboardButton("🍀 Thử lại 🍀", "chk")
                 ]
             ]
         )
-        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
+        await m.reply_text("**⚠️Quyền truy cập bị từ chối!⚠️\n\nHãy tham gia @{} cùng chúng tôi. Nếu bạn đã tham gia, hãy nhấp vào nút kiểm tra lại để xác nhận**".format(cfg.FSUB), reply_markup=key)
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -97,10 +95,8 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/SDBOTs_inifinity"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/SDBOTz")
-                    ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
+                        InlineKeyboardButton("🗯 Nhóm 18+", url="https://t.me/noiquy"),
+                        InlineKeyboardButton("💬 Kênh 18+", url="https://t.me/nhatky18")
                     ]
                 ]
             )
@@ -118,17 +114,17 @@ async def dbtool(_, m : Message):
     x = all_groups()
     tot = int(xx + x)
     await m.reply_text(text=f"""
-🍀 Chats Stats 🍀
-🙋‍♂️ Users : `{xx}`
+🍀 Thống kê 🍀
+🙋‍♂️ Người dùng : `{xx}`
 👥 Groups : `{x}`
-🚧 Total users & groups : `{tot}` """)
+🚧 Tổng người dùng và nhóm: `{tot}` """)
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Broadcast ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-@app.on_message(filters.command("bcast") & filters.user(cfg.SUDO))
+@app.on_message(filters.command("send") & filters.user(cfg.SUDO))
 async def bcast(_, m : Message):
     allusers = users
-    lel = await m.reply_text("`⚡️ Processing...`")
+    lel = await m.reply_text("`⚡️ Dang xử lý...`")
     success = 0
     failed = 0
     deactivated = 0
@@ -153,7 +149,7 @@ async def bcast(_, m : Message):
             print(e)
             failed +=1
 
-    await lel.edit(f"✅Successfull to `{success}` users.\n❌ Faild to `{failed}` users.\n👾 Found `{blocked}` Blocked users \n👻 Found `{deactivated}` Deactivated users.")
+    await lel.edit(f"✅ Gửi thành công đến `{success}` người dùng.\n❌ Thát bại `{failed}` người dùng.\n👾 Bị chặn bởi `{blocked}` người dùng\n👻 Tìm thấy `{deactivated}` tài khoản đã xoá")
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Broadcast Forward ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
